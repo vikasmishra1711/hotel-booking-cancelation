@@ -2,9 +2,9 @@ name: ML Pipeline
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   schedule:
     # Run every day at 2 AM UTC
     - cron: '0 2 * * *'
@@ -37,7 +37,7 @@ jobs:
         cd src
         python main.py
     
-    - name: Deploy to Streamlit (if on master branch)
+    - name: Deploy to Streamlit (if on main branch)
       if: github.ref == 'refs/heads/master'
       run: |
         echo "Model retrained successfully. Ready for deployment."

@@ -38,7 +38,7 @@ jobs:
         python main.py
     
     - name: Deploy to Streamlit (if on main branch)
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       run: |
         echo "Model retrained successfully. Ready for deployment."
     
